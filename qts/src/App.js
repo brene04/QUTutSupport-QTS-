@@ -23,7 +23,6 @@ function App() {
     setScreen('login');
   };
 
-  // ── Not logged in ──
   if (!user) {
     if (screen === 'register') {
       return (
@@ -41,7 +40,6 @@ function App() {
     );
   }
 
-  // ── Logged in ──
   return (
     <div className="App">
 
@@ -51,7 +49,6 @@ function App() {
         <p style={{ fontSize: '12px', opacity: 0.7 }}>{user.email}</p>
       </div>
 
-      {/* Page Content */}
       <div className="page-content">
         {activeTab === 'create' && <CreateBooking />}
         {activeTab === 'view'   && <ViewBookings />}
@@ -59,14 +56,13 @@ function App() {
         {activeTab === 'delete' && <DeleteBooking />}
       </div>
 
-      {/* Bottom Tab Navigation */}
       <nav className="bottom-nav">
         <div
           className={`nav-item ${activeTab === 'create' ? 'active' : ''}`}
           onClick={() => setActiveTab('create')}
           style={{ cursor: 'pointer' }}
         >
-          <span style={{ fontSize: '16px', marginBottom: '20px', marginTop: '20px'}}>New</span>
+          <span style={{ fontSize: '16px', marginBottom: '20px', marginTop: '20px'}}>Create</span>
         </div>
         <div
           className={`nav-item ${activeTab === 'view' ? 'active' : ''}`}

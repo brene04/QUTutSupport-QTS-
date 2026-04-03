@@ -40,7 +40,6 @@ const ViewBookings = () => {
         bookings.map((booking) => (
           <div key={booking._id} className="session-card" style={{ flexDirection: 'column' }}>
 
-            {/* Booking ID row */}
             <div style={{
               display: 'flex',
               alignItems: 'center',
@@ -76,7 +75,6 @@ const ViewBookings = () => {
               </button>
             </div>
 
-            {/* Booking details */}
             <div className="session-info">
               <h4>Tutor Name: {booking.tutor_id}</h4>
               <p>Date: {booking.date}</p>

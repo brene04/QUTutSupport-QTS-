@@ -5,20 +5,16 @@ require('dotenv').config();
 
 const app = express();
 
-// ── Middleware ──
-app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors({ origin: ['http://localhost:3000', 'http://3.106.115.104'] }));
 app.use(express.json());
 
-// ── Routes ──
 app.use('/api/bookings', require('./routes/bookings'));
 app.use('/api/auth',     require('./routes/auth'));
 
-// ── Health check ──
 app.get('/', (req, res) => {
   res.json({ message: 'QUTutSupport API is running!' });
 });
 
-// ── Connect to MongoDB & Start Server ──
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
