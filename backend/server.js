@@ -5,7 +5,7 @@ require('dotenv').config();
 
 const app = express();
 
-app.use(cors({ origin: ['http://localhost:3000', 'http://16.176.231.168'] }));
+app.use(cors({ origin: ['http://localhost:3000', 'http://3.107.27.130 '] }));
 app.use(express.json());
 
 app.use('/api/bookings', require('./routes/bookings'));
